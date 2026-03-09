@@ -4,7 +4,7 @@
 #include "kernel/fs.h"
 
 #define MAX_DEPTH 20
-#define MAX_LENGTH 128
+#define MAX_LENGTH 256
 
 void print(char *path, int level, int is_last[], int keynum) {
 
@@ -25,7 +25,7 @@ void traverse(char *path, char *basename, int level, int is_last[], int *file_nu
             keynum++;
         }
     }
-    
+
     if ((fd = open(path, 0)) < 0) {
         printf("%s [error opening dir]\n", path);
         return;
